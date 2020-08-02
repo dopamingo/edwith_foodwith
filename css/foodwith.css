@@ -1,0 +1,792 @@
+@charset "UTF-8";
+/* css reset */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label,
+legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details,
+figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin : 0;
+    padding : 0;
+    border : 0;
+    outline : 0;
+    font-size : 100%;
+    vertical-align : baseline;
+    background : transparent;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display : block;
+}
+body, input, textarea, select, button {
+    font-family : '나눔 고딕', NanumGothic, '돋움', Dotum, sans-serif;
+}
+ul, ol {
+    list-style : none;
+}
+table {
+    border-collapse : collapse;
+    border-spacing : 0;
+}
+em {
+    font-style : normal;
+}
+a {
+    color : inherit;
+    text-decoration : none;
+}
+img {
+    vertical-align : top;
+}
+/* main */
+.blind {
+    position : absolute;
+    width : 1px;
+    height : 1px;
+    clip : rect(0,0,0,0);
+    margin : -1px;
+    overflow : hidden;
+}
+.icon_blind {
+    display : block;
+    overflow : hidden;
+    font-size : 1px;
+    line-height : 0;
+    color : transparent;
+}
+.foodheader {
+    background-color: #fff;
+    height: 50px;
+}
+.logo{
+    display: block;
+    width: 114px;
+    height: 50px;
+    background: url("../image/logo_m.png") 50% 50% no-repeat;
+    background-size: auto 16px;
+}
+.gnb {
+    position: absolute; top:0; right:0;
+    width: 46px;
+    height: 50px;
+    background: url("../image/icon_menu.png") 50% 50% no-repeat;
+    background-size: auto 16px;
+}
+.active + .menu {
+    display: block; /* 햄버거 메뉴 활성화 시 메뉴 노출 처리 */
+}
+.menu {
+    display: none;  /* 모바일 메뉴는 기본 비노출 처리 */
+    position: absolute; top: 50px;
+    padding: 10px 0;
+    width: 100%;
+    background: #fff;
+}
+.menu a {
+    display: block;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+}
+.banner a {
+    display: block;
+    padding: 20px 35px;
+    background-color:#ffee02;
+}
+.bannerimg{
+    display: block;
+    margin: 0 auto;
+    width: 250px;
+    height: 180px;
+}
+.bannertitle {
+    font-size: 22px;
+    line-height: 28px;
+    color: #333;
+    font-weight: normal;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.user:before {
+    display: block;
+    content: '';
+    width: 40px;
+    border-bottom: 1px solid #333;
+    margin: 20px auto;
+}
+.user {
+    height: 30px;
+    width: 130px;
+    margin: 20px auto;
+    margin-bottom: 30px;
+}
+.userimg {
+    display: inline-block;
+    margin-right: 6px;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background: url("../image/thumbnail_profile_none.jpg");
+    background-size: contain;
+}
+.userimg img {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+}
+.username {
+    display: inline-block;
+    line-height: 30px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+    vertical-align: top;
+}
+/* recipe */
+.recipe {
+    padding: 15px;
+    background-color: #f0f0f0;
+}
+.recipelist a{
+    display: block;
+}
+.imgbox {
+    position: relative;
+}
+.imgbox:before{
+    position: absolute;top: 0;left: 0; right: 0; bottom: 0;
+    z-index: 10;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    display: block;
+    content: ""
+}
+.recipelist img {
+    display: block;
+    width: 100%;
+}
+.recipelist a {
+    margin-bottom:15px;
+}
+.recipetitle {
+    font-size: 14px;
+    line-height: 40px;
+    font-weight: normal;
+    text-align: center;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
+}
+.more {
+    display: block;
+    font-size: 16px;
+    color: #333;
+    line-height: 60px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #c1c1c1;
+}
+.more:before {
+    content: '';
+    display:inline-block;
+    margin-right: 6px;
+    vertical-align: -2px;
+    width: 16px;
+    height: 16px;
+    background: url(../image/icon_arrow_more.png) no-repeat;
+    background-size: 100%;
+}
+/* message */
+.message {
+    background-color: #f4f5f7;
+    padding: 30px 15px;
+}
+.massagetxt {
+    margin-bottom: 25px;
+    text-align: center;
+    color: #333;
+}
+.messagetitle {
+    padding-bottom: 8px;
+    font-size: 22px;
+    font-weight: normal;
+}
+.messagetitle + p {
+    font-size: 14px;
+}
+.messageform {
+    background-color: #fff;
+    padding: 25px;
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.08);
+    position: relative;
+}
+.messageform label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}
+input::placeholder, textarea::placeholder {
+    font-size: 14px;
+    line-height: 1.4em;
+    color: #acacac;
+}
+.formrow+.formrow {
+    margin-top: 20px;
+}
+.messageform .nickname {
+    width: 100%;
+    padding: 10px 0;
+    border: 0;
+    border-bottom: 1px solid #c1c1c1;
+    font-size: 14px;
+    color: #333;
+    box-sizing : border-box;
+}
+.messageform .email {
+    padding: 10px 0;
+    width: 46%;
+    border: 0;
+    border-bottom: 1px solid #c1c1c1;
+    font-size: 14px;
+    color: #333;
+    box-sizing : border-box;
+}
+.formrow {
+    position: relative;
+}
+.dot {
+    display: inline-block;
+    position:absolute; top:38px;left:50%;
+    margin-left: -8px;
+    width: 16px;
+    text-align: center;
+}
+.messageform select {
+    float: right;
+    width: 46%;
+    padding: 10px 0;
+    border: 0;
+    border-bottom: 1px solid #c1c1c1;
+    border-radius: 0px;
+    background: url("../image/icon_arrow_email.png") no-repeat;
+    background-size: 10px;
+    background-position: right 50%;
+    font-size: 14px;
+    color: #333;
+    box-sizing : border-box;
+    -webkit-appearance: none;
+}
+.messageform:after {
+    content : "";
+    display : block;
+    clear : both;
+}
+.messageform textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #c1c1c1;
+    background-color: transparent;
+    box-sizing : border-box;
+    resize: none;
+}
+.btn_send {
+    position: absolute; top: 25px; right: 25px;
+    padding: 4px 10px;
+    border: 2px solid #bdbdbd;
+    background-color: #e9e9e9;
+    font-size: 11px;
+    color: #666;
+    cursor: pointer;
+}
+/* notice */
+.noticefoot {
+    background-color: #f0f0f0;
+    padding: 15px;
+}
+.notice {
+    padding: 20px 0;
+    border-bottom: 1px solid #c1c1c1;
+}
+.noticetitle,
+.createrstitle,
+.parterstitle{
+    display: block;
+    padding-bottom: 8px;
+    font-size: 16px;
+    color: #333;
+}
+.noticetitle +.contents {
+    width: 85%; /* display:flex 속성 공부해서 적용해보기 */
+    text-overflow: ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
+}
+.noticemore {
+    position:absolute; right:0;
+    padding: 0 15px;
+    font-size: 14px;
+}
+.notice:after {
+    content : "";
+    display : block;
+    clear : both;
+}
+.contents {
+    display: inline-block;
+    font-size: 14px;
+    color: #333;
+    position: relative;
+}
+.contents + .contents:before {
+    content: "|";
+    display: inline-block;
+    padding: 0 10px 0 8px;
+    color: #c1c1c1;
+}
+.creators, .parters {
+    margin: 20px 0;
+}
+/* footer */
+footer {
+    padding: 15px;
+    background-color: #fff;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+}
+.footerterms, .copyright {
+    margin: 14px 0;
+}
+.footerterms li {
+    display: inline-block;
+    padding: 0 5px;
+}
+
+/* view */
+.viewpage {
+    padding: 15px;
+    background-color: #f0f0f0;
+}
+.viewtitle {
+    padding: 14px 0;
+    font-size: 28px;
+    color: #333;
+}
+.itemgroup {
+    padding-bottom: 24px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #c1c1c1;
+}
+.item {
+    padding-bottom: 6px;
+}
+.item > strong {
+    display: inline-block;
+    width: 100px;
+    font-size: 14px;
+    color: #767676;
+}
+.item > span {
+    font-size: 14px;
+    color: #666;
+}
+.number {
+    font-family : 'tahoma';
+}
+.detailtitle {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+.detaildic {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.8em;
+    padding-bottom: 24px;
+}
+.detaildic > a {
+    color: #3b9a7b;
+    text-decoration: underline;
+}
+.detaildic ol {
+    padding-left: 15px;
+    list-style-type: decimal;
+}
+.cooktable {
+    margin: 8px 0;
+    width: 100%;
+    table-layout:fixed;
+}
+.colwidth {
+    width: 100px;
+}
+.cooktable tr,
+.cooktable th,
+.cooktable td {
+    padding: 6px;
+    text-align: left;
+    border: 1px solid #c1c1c1;
+    vertical-align: middle;
+}
+.cooktable thead {
+    background-color: #eaeaea;
+    font-size: 16px;
+    line-height: 20px;
+    color: #333;
+}
+.cooktable tbody {
+    font-size: 14px;
+    line-height: 20px;
+    color: #666;
+}
+.cookimg {
+    margin: 24px 0;
+}
+.cookimg img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+    padding-bottom: 14px;
+}
+.cookimg figcaption {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+}
+@media (min-width: 768px) {
+    /* main */
+    .gnb {
+        display: none;
+    }
+    .wrap {
+        position: relative;
+    }
+    .menu {
+        display: block;
+        position: absolute; top: 0px; right:0;
+        width: 240px;
+        padding: 0;
+        background: none;
+    }
+    .menu a {
+        display: inline-block;
+        padding-left: 16px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 18px;
+        text-align: right;
+    }
+    .banner a {
+        padding: 20px 34px;
+        height: 330px;
+    }
+    .bannerimg{
+        position: absolute; top:38px; right: 0;
+        width: 350px;
+        height: 252px;
+    }
+    .bannertitle {
+        margin-left: 0;
+        padding-top: 50px;
+        width: 48%;
+        font-size: 32px;
+        line-height: 40px;
+        text-align: left;
+        overflow: hidden;
+        -webkit-line-clamp: 3;
+    }
+    .user:before {
+        display: block;
+        content: '';
+        width: 40px;
+        border-bottom: 1px solid #333;
+        margin: 15px 0 30px 0;
+    }
+    .user {
+        float:left;
+        height: 40px;
+        width: 150px;
+        margin: 20px auto;
+    }
+    .userimg {
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+    }
+    .userimg img {
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+    }
+    .username {
+        line-height: 40px;
+        font-size: 18px;
+    }
+    /* recipe */
+    .recipe {
+        padding: 20px 34px 20px 34px;
+    }
+    .recipelist {
+        margin: -10px;
+    }
+    .recipelist li {
+        float: left;
+        width: 50%;
+    }
+    .recipelist a{
+        display: block;
+        margin: 10px;
+        margin-bottom: 10px;
+    }
+    .recipelist:after {
+        content : "";
+        display : block;
+        clear : both;
+    }
+    .recipetitle {
+        font-size: 18px;
+        line-height: 50px;
+    }
+    .more {
+        margin-top:20px;
+    }
+    /* message */
+    .message {
+        padding: 30px 34px;
+    }
+    .messagetitle {
+        padding-bottom: 8px;
+        font-size: 30px;
+    }
+    .messagetitle + p {
+        font-size: 18px;
+    }
+    .messageform {
+        background-color: #fff;
+        padding: 40px 50px;
+        box-shadow: 0 8px 32px 0 rgba(0,0,0,0.08);
+        position:relative;
+    }
+    .formrow+.formrow {
+        margin-top: 50px;
+    }
+    .btn_send {
+        position: absolute; top: 30px; right: 50px;
+        padding: 10px 30px;
+        border: 2px solid #bdbdbd;
+        background-color: #e9e9e9;
+        font-size: 15px;
+        color: #666;
+    }
+    /* notice */
+    .noticefoot {
+        background-color: #f0f0f0;
+        padding: 15px 34px;
+    }
+    .createrstitle,
+    .parterstitle{
+        display: inline-block;
+        width: 80px;
+        padding-bottom: 0;
+    }
+    /* footer */
+    footer {
+        padding: 15px;
+        background-color: #fff;
+        text-align: center;
+        font-size: 14px;
+        color: #333;
+    }
+    .footerterms, .copyright {
+        margin: 14px 0;
+    }
+    /* view */
+    .viewtitle {
+        padding-bottom: 30px;
+        font-size: 36px;
+    }
+    .item {
+        float: left;
+        padding-bottom: 6px;
+        width: 50%;
+    }
+    .itemgroup::after {
+        content : "";
+        display : block;
+        clear : both;
+    }
+}
+@media (min-width: 1024px) {
+    .wrap {
+        margin: 0 auto;
+        width: 988px;
+    }
+    /* main */
+    .foodheader {
+        height: 70px;
+    }
+    .logo{
+        display: block;
+        width: 114px;
+        height: 70px;
+        background: url("../image/logo_pc.png") 50% 50% no-repeat;
+        background-size: auto 22px;
+    }
+    .gnb {
+        display: none;
+    }
+    .menu {
+        display: block;
+        position: absolute; top: 0px; right:0;
+        width: 300px;
+        padding: 0;
+        background: none;
+    }
+    .menu a {
+        display: inline-block;
+        padding-left: 30px;
+        height: 70px;
+        line-height: 70px;
+        font-size: 22px;
+        text-align: right;
+    }
+    .menu a:hover,
+    .menu a:focus {
+        font-weight: bold;
+    }
+    .banner a {
+        padding: 20px 34px;
+        height: 420px;
+        position: relative;
+    }
+    .bannerimg{
+        position: absolute; top: 28px; right: 0;
+        width: 500px;
+        height: 360px;
+    }
+    .bannertitle {
+        margin-left: 0;
+        padding-top: 80px;
+        width: 48%;
+        font-size: 40px;
+        line-height: 52px;
+        text-align: left;
+        overflow: hidden;
+        -webkit-line-clamp: 3;
+    }
+    /* recipe */
+    .recipe {
+        padding: 20px 34px 20px 34px;
+    }
+    .recipelist {
+        margin: -10px;
+    }
+    .recipelist li {
+        float: left;
+        width: 336px;
+    }
+    .recipelist a{
+        display: block;
+        margin: 10px;
+        margin-bottom: 10px;
+    }
+    .recipelist:after {
+        content : "";
+        display : block;
+        clear : both;
+    }
+    .recipelist a {
+        position: relative;
+    }
+    .recipetitle {
+        display: none;
+        position: absolute; bottom: 0;
+        padding: 0 10px;
+        width: 296px;
+        font-size: 18px;
+        line-height: 60px;
+        background-color: #fff;
+    }
+    .recipelist a:hover .recipetitle,
+    .recipelist a:focus .recipetitle {
+        display:block;
+    }
+    .recipelist a:hover .imgbox:before,
+    .recipelist a:focus .imgbox:before  {
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+    /* message */
+    .message {
+        padding: 60px 34px;
+        background: url("../image/bg_pencil.png") center 75% no-repeat;
+    }
+    .message::after {
+        content : "";
+        display : block;
+        clear : both;
+    }
+    .massagetxt {
+        float: left;
+        width: 340px;
+        text-align: left;
+    }
+    .messagetitle {
+        padding-bottom: 24px;
+        font-size: 42px;
+    }
+    .messagetitle + p {
+        font-size: 18px;
+    }
+    .messageform {
+        float: right;
+        width: 490px;
+        background-color: rgba(255,255,255,0.9);
+        padding: 40px 50px;
+        box-shadow: 0 8px 32px 0 rgba(0,0,0,0.08);
+    }
+    .formrow+.formrow {
+        margin-top: 50px;
+    }
+    .btn_send {
+        position: absolute; top: 30px; right: 50px;
+        padding: 10px 30px;
+        border: 2px solid #bdbdbd;
+        background-color: #e9e9e9;
+        font-size: 15px;
+        color: #666;
+    }
+    .more {
+        margin-top:20px;
+    }
+    /* notice */
+    .noticefoot {
+        background-color: #f0f0f0;
+        padding: 15px 34px;
+    }
+    .createrstitle,
+    .parterstitle{
+        display: inline-block;
+        width: 80px;
+        padding-bottom: 0;
+    }
+    /* footer */
+    footer {
+        padding: 15px;
+        background-color: #fff;
+        text-align: center;
+        font-size: 14px;
+        color: #333;
+    }
+    .footerterms, .copyright {
+        margin: 14px 0;
+    }
+    /* view */
+    .viewpage {
+        padding: 40px 0;
+    }
+}
